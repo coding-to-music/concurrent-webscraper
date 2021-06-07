@@ -1,5 +1,7 @@
 FROM node:10
 
+WORKDIR /usr/src/app
+
 RUN apt-get update
 
 RUN apt-get install -yyq ca-certificates
@@ -9,8 +11,6 @@ RUN apt-get install -yyq libappindicator1 libasound2 libatk1.0-0 libc6 libcairo2
 RUN apt-get install -yyq gconf-service lsb-release wget xdg-utils
 
 RUN apt-get install -yyq fonts-liberation
-
-WORKDIR /usr/src/app
 
 COPY package*.json ./
 
